@@ -3,6 +3,7 @@
 	desc = "By birth, blade or brain, I am noble known to the royalty of these lands, and have all the benefits associated with it."
 	added_traits = list(TRAIT_NOBLE)
 	added_skills = list(/datum/skill/misc/reading = 1)
+	can_pair = TRUE
 
 /datum/virtue/utility/noble/apply_to_human(mob/living/carbon/human/recipient)
 	SStreasury.noble_incomes[recipient] += 15
@@ -11,6 +12,7 @@
 	name = "Beautiful"
 	desc = "Wherever I go, I turn heads, such is my natural beauty."
 	added_traits = list(TRAIT_BEAUTIFUL)
+	can_pair = TRUE
 
 /datum/virtue/utility/deadened
 	name = "Deadened"
@@ -26,6 +28,7 @@
 /datum/virtue/utility/linguist
 	name = "Linguist"
 	desc = "I've spent a while studying a foreign language, and can speak and understand it fluently."
+	can_pair = TRUE
 
 /datum/virtue/utility/linguist/apply_to_human(mob/living/carbon/human/recipient)
 	var/list/selectable_languages = list(/datum/language/elvish, /datum/language/dwarvish, /datum/language/orcish, /datum/language/hellspeak, /datum/language/draconic, /datum/language/celestial)
@@ -70,6 +73,7 @@
 	name = "Feral Appetite"
 	desc = "Raw, toxic or spoiled food doesn't bother my superior digestive system."
 	added_traits = list(TRAIT_NASTY_EATER)
+	can_pair = TRUE
 
 /datum/virtue/utility/night_vision
 	name = "Night-eyed"

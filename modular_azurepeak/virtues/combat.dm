@@ -71,6 +71,7 @@
 	name = "Guarded"
 	desc = "I have long kept my true capabilities a secret. Sometimes being deceptively weak can save one's life."
 	added_traits = list(TRAIT_DECEIVING_MEEKNESS)
+	can_pair = TRUE
 
 /datum/virtue/combat/impervious
 	name = "Impervious"
@@ -82,6 +83,7 @@
 	desc = "I was once afflicted with the accursed rot, and was cured. It has left me changed: my limbs are weaker, but I feel no pain and have no need to breathe..."
 	// below is functionally equivalent to dying and being resurrected via astrata T4 - yep, this is what it gives you.
 	added_traits = list(TRAIT_EASYDISMEMBER, TRAIT_NOPAIN, TRAIT_NOPAINSTUN, TRAIT_NOBREATH, TRAIT_TOXIMMUNE, TRAIT_ZOMBIE_IMMUNE, TRAIT_ROTMAN)
+	can_pair = TRUE
 
 /datum/virtue/combat/rotcured/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.update_body() // applies the rot skin tone stuff
