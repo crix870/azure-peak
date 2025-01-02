@@ -1411,7 +1411,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						// also, unset our virtue if we're not a virtuous statpack with a can_pair virtue
 						if (!istype(statpack, /datum/statpack/wildcard/virtuous) && virtue.type != /datum/virtue/none && !virtue.can_pair)
 							virtue = new /datum/virtue/none
-							to_chat(user, span_info("Your virtue has been removed due to taking an incompatible stat-altering statpack."))
+							to_chat(user, span_info("Your virtue has been removed as it is incompatible with an stat-altering statpack."))
 				// LETHALSTONE EDIT: add pronouns
 				if ("pronouns")
 					var pronouns_input = input(user, "Choose your character's pronouns", "Pronouns") as null|anything in GLOB.pronouns_list
@@ -1574,7 +1574,10 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						var/datum/virtue/virtue_chosen = virtue_choices[result]
 						virtue = virtue_chosen
 						if (virtue.desc)
-							to_chat(user, span_purple(virtue.desc))
+							var/desc_text = virtue.desc
+							if(virtue.can_pair)
+								desc_text += "\nYou may select a statpack with this virtue."
+							to_chat(user, span_purple(desc_text))
 						if(!virtue.can_pair && statpack.type != /datum/statpack/wildcard/virtuous)
 							statpack = new /datum/statpack/wildcard/virtuous
 							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) because you have selected this virtue."))
