@@ -1408,10 +1408,10 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						statpack = statpack_chosen
 						to_chat(user, "<font color='purple'>[statpack.name]</font>")
 						to_chat(user, "<font color='purple'>[statpack.description_string()]</font>")
-						// also, unset our virtue if we're not a virtuous statpack.
-						if (!istype(statpack, /datum/statpack/wildcard/virtuous) && virtue.type != /datum/virtue/none)
+						// also, unset our virtue if we're not a virtuous statpack with a can_pair virtue
+						if (!istype(statpack, /datum/statpack/wildcard/virtuous) && virtue.type != /datum/virtue/none && !virtue.can_pair)
 							virtue = new /datum/virtue/none
-							to_chat(user, span_info("Your virtue has been removed due to taking a stat-altering statpack."))
+							to_chat(user, span_info("Your virtue has been removed due to taking an incompatible stat-altering statpack."))
 				// LETHALSTONE EDIT: add pronouns
 				if ("pronouns")
 					var pronouns_input = input(user, "Choose your character's pronouns", "Pronouns") as null|anything in GLOB.pronouns_list
@@ -1575,9 +1575,9 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						virtue = virtue_chosen
 						if (virtue.desc)
 							to_chat(user, span_purple(virtue.desc))
-						if (statpack.type != /datum/statpack/wildcard/virtuous)
+						if(!virtue.can_pair && statpack.type != /datum/statpack/wildcard/virtuous)
 							statpack = new /datum/statpack/wildcard/virtuous
-							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) due to selecting a virtue."))
+							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) because you have selected this virtue."))
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()

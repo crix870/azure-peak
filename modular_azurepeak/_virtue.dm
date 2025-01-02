@@ -17,6 +17,8 @@ GLOBAL_LIST_EMPTY(virtues)
 	var/list/added_stats = list()
 	/// The cost of the virtue to apply in TRIUMPH points, if any.
 	var/triumph_cost = 0
+	/// Whether the virtue can be paired with a statpack
+	var/can_pair = FALSE
 
 /datum/virtue/New()
 	. = ..()
