@@ -10,6 +10,9 @@
 	var/order_range = 12
 	var/faction_ordering = FALSE ///this sets whether it orders mobs the user is aligned with in range or just mobs who are the character's 'friends' (ie, their summons)
 
+/obj/effect/proc_holder/spell/invoked/minion_order/lich //as an example, this should allow the lich to command the entire undead faction
+	faction_ordering = TRUE
+
 /obj/effect/proc_holder/spell/invoked/minion_order/cast(list/targets, mob/user)
 	var/mob/caster = user
 	var/target = targets[1]
@@ -25,7 +28,7 @@
 		return
 
 	// Target is another mob
-	else if(istype(target, /mob/living))
+	else if(ismob(target))
 		var/mob/living/mob_target = target
 		if(caster.faction_check_mob(target) || (mob_target.summoner && mob_target.summoner == caster.name))
 			src.process_minions(order_type = "aggressive", target = target)
@@ -59,8 +62,7 @@
 						minion.ai_controller.set_blackboard_key(BB_FOLLOW_TARGET, target)
 						minion.balloon_alert(caster, "Following you.")
 					if ("aggressive")
-						// Aggressive mode - no specific key to set, keys already cleared
-						continue
+						minion.balloon_alert(caster, "Returning to my natural state.")
 					if ("attack")
 						minion.ai_controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 						minion.balloon_alert(caster, "Attacking [target.name].")
