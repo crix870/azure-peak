@@ -108,7 +108,7 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/Initialize(mapload, mob/user, cabal_affine = FALSE)
 	. = ..()
 	if(user)
-		friends += user.name
+		summoner = user.name
 		if (cabal_affine)
 			faction |= "cabal"
 

@@ -409,6 +409,7 @@
 #include "code\datums\achievements\boss_achievements.dm"
 #include "code\datums\achievements\misc_achievements.dm"
 
+
 #include "code\datums\atmosphere\_atmosphere.dm"
 #include "code\datums\atmosphere\planetary.dm"
 #include "code\datums\brain_damage\brain_trauma.dm"
@@ -1030,6 +1031,7 @@
 #include "code\modules\awaymissions\away_props.dm"
 #include "code\modules\awaymissions\corpse.dm"
 #include "code\modules\awaymissions\zlevel.dm"
+#include "code\modules\balloon_alert\balloon_alert.dm"
 #include "code\modules\buildmode\bm_mode.dm"
 #include "code\modules\buildmode\buildmode.dm"
 #include "code\modules\buildmode\buttons.dm"
@@ -1924,6 +1926,7 @@
 #include "modular_azurepeak\code\modules\jobs\job_types\roguetown\vagabond\wanted.dm"
 #include "modular_azurepeak\code\modules\mob\living\simple_animal\rogue\creacher\dragon.dm"
 #include "modular_azurepeak\code\modules\mob\living\simple_animal\rogue\creacher\gethsmane.dm"
+#include "modular_azurepeak\code\modules\spells\familiar_ordering.dm"
 #include "modular_azurepeak\code\modules\mob\living\simple_animal\rogue\creacher\newminotaur.dm"
 #include "modular_azurepeak\code\modules\spells\orison.dm"
 #include "modular_azurepeak\code\modules\spells\warscholar.dm"
@@ -2025,6 +2028,7 @@
 
 #include "code\datums\ai\subtrees\attack_adjacent_target.dm"
 #include "code\datums\ai\subtrees\attack_obstacle_in_path.dm"
+#include "code\datums\ai\subtrees\being_a_minion.dm"
 #include "code\datums\ai\subtrees\call_reinforcements.dm"
 #include "code\datums\ai\subtrees\find_food.dm"
 #include "code\datums\ai\subtrees\flee_nearest_target.dm"

@@ -50,7 +50,7 @@
 	. = ..()
 	AddElement(/datum/element/ai_retaliate)
 	if(user)
-		friends += user.name
+		summoner = user.name
 		if (townercrab)
 			faction = list("neutral")
 			tamed(1)
