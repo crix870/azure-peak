@@ -1,6 +1,9 @@
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
 
+//NEVER HAVE ANYTHING BELOW THIS PLANE ADJUST IF YOU NEED MORE SPACE
+#define LOWEST_EVER_PLANE -200
+
 #define FIELD_OF_VISION_BLOCKER_PLANE -199
 #define FIELD_OF_VISION_BLOCKER_RENDER_TARGET "*fovblock"
 
@@ -13,6 +16,8 @@
 #define WEATHER_OVERLAY_LAYER -80
 #define WEATHER_RENDER_TARGET "*WEATHER_OVERLAY_PLANE"
 
+
+
 #define OPENSPACE_LAYER 17 //Openspace layer over all
 #define OPENSPACE_PLANE -7 //Openspace plane below all turfs
 #define OPENSPACE_BACKDROP_PLANE -6
@@ -23,6 +28,15 @@
 #define GAME_PLANE_UPPER -2
 #define WEATHER_EFFECT_PLANE -1
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
+
+// Lummox I swear to god I will find you
+// NOTE! You can only ever have planes greater then -10000, if you add too many with large offsets you will brick multiz
+// Same can be said for large multiz maps. Tread carefully mappers
+#define HIGHEST_EVER_PLANE RENDER_PLANE_MASTER
+/// The range unique planes can be in
+/// Try and keep this to a nice whole number, so it's easy to look at a plane var and know what's going on
+#define PLANE_RANGE (HIGHEST_EVER_PLANE - LOWEST_EVER_PLANE)
+
 
 #define SPACE_LAYER 1.8
 //#define TURF_LAYER 2 //For easy recordkeeping; this is a byond define
@@ -151,5 +165,19 @@
 
 #define SPLASHSCREEN_LAYER 26
 #define SPLASHSCREEN_PLANE 27
+
+#define BALLOON_CHAT_PLANE 31
+
+//-------------------- Rendering ---------------------
+#define RENDER_PLANE_GAME 40
+/// If fov is enabled we'll draw game to this and do shit to it
+#define RENDER_PLANE_GAME_MASKED 41
+/// The bit of the game plane that is let alone is sent here
+#define RENDER_PLANE_GAME_UNMASKED 42
+#define RENDER_PLANE_NON_GAME 45
+
+#define RENDER_PLANE_MASTER 50
+
+
 
 #define FOV_EFFECTS_LAYER 10000

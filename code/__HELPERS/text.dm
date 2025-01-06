@@ -28,6 +28,10 @@
 			index = findtext(t, char)
 	return t
 
+/// Runs STRIP_HTML_FULL and sanitize.
+/proc/strip_html_full(text, limit = MAX_MESSAGE_LEN)
+	return sanitize(STRIP_HTML_FULL(text, limit))
+
 // Removes punctuation
 /proc/strip_punctuation(t,limit=MAX_MESSAGE_LEN)
 	var/list/strip_chars = list(",",".","!","?")
