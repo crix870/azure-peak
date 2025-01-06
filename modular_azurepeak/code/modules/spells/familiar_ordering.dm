@@ -54,10 +54,13 @@
 				switch (order_type)
 					if ("goto")
 						minion.ai_controller.set_blackboard_key(BB_TRAVEL_DESTINATION, target_location)
+						minion.balloon_alert(caster, "Going to [target_location].")
 					if ("follow")
 						minion.ai_controller.set_blackboard_key(BB_FOLLOW_TARGET, target)
+						minion.balloon_alert(caster, "Following you.")
 					if ("aggressive")
 						// Aggressive mode - no specific key to set, keys already cleared
 						continue
 					if ("attack")
 						minion.ai_controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
+						minion.balloon_alert(caster, "Attacking [target.name].")

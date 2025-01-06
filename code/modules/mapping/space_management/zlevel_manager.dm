@@ -4,6 +4,8 @@
 		return
 
 	z_list = list()
+	z_level_to_plane_offset = list()
+	z_level_to_lowest_plane_offset = list()
 	var/list/default_map_traits = DEFAULT_MAP_TRAITS
 
 	if (default_map_traits.len != world.maxz)

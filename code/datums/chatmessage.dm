@@ -7,11 +7,7 @@
 #define CHAT_MESSAGE_WIDTH			96 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		110 // characters
 //#define WXH_TO_HEIGHT(x)			text2num(copytext((x), findtextEx((x), "x") + 1)) // thanks lummox
-#define WXH_TO_HEIGHT(measurement, return_var) \
-	do { \
-		var/_measurement = measurement; \
-		return_var = text2num(copytext(_measurement, findtextEx(_measurement, "x") + 1)); \
-	} while(FALSE);
+
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 /**
