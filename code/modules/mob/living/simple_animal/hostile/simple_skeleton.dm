@@ -191,3 +191,14 @@
 	clickcd = SKELETON_ATTACK_SPEED
 	chargetime = 1
 	animname = "stab"
+
+/mob/living/simple_animal/hostile/rogue/skeleton/axe/event
+	ai_controller = /datum/ai_controller/simple_skeleton/event
+/mob/living/simple_animal/hostile/rogue/skeleton/spear/event
+	ai_controller = /datum/ai_controller/skeleton_spear/event
+/mob/living/simple_animal/hostile/rogue/skeleton/guard/event
+	ai_controller = /datum/ai_controller/simple_skeleton/event
+/mob/living/simple_animal/hostile/rogue/skeleton/bow/event
+	ai_controller = /datum/ai_controller/skeleton_ranged/event
+	
+	

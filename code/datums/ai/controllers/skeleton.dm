@@ -29,6 +29,7 @@
 	)
 
 	planning_subtrees = list(
+		/datum/ai_planning_subtree/being_a_minion,
 		/datum/ai_planning_subtree/target_retaliate,
 		/datum/ai_planning_subtree/simple_find_target/closest,
 		/datum/ai_planning_subtree/melee_spacing,
@@ -54,3 +55,31 @@
 	)
 
 	idle_behavior = /datum/idle_behavior/idle_random_walk
+
+///Key difference is minion is at the end and that it is an /event, so they will attack on the way there
+/datum/ai_controller/simple_skeleton/event
+	planning_subtrees = list(
+
+		/datum/ai_planning_subtree/simple_find_target/closest,
+		/datum/ai_planning_subtree/basic_melee_attack_subtree/opportunistic/event_loc,
+		/datum/ai_planning_subtree/travel_to_point/and_clear_target,
+	)
+
+/datum/ai_controller/skeleton_spear/event
+
+	planning_subtrees = list(
+
+		/datum/ai_planning_subtree/simple_find_target/closest,
+		/datum/ai_planning_subtree/basic_melee_attack_subtree/opportunistic/event_loc,
+		/datum/ai_planning_subtree/travel_to_point/and_clear_target,
+		/datum/ai_planning_subtree/melee_spacing,
+	)
+///Try not to spawn these, the ai will be poor
+/datum/ai_controller/skeleton_ranged/event
+	planning_subtrees = list(
+
+		/datum/ai_planning_subtree/basic_ranged_attack_subtree,
+		/datum/ai_planning_subtree/simple_find_target/closest,
+		/datum/ai_planning_subtree/travel_to_point/and_clear_target,
+		/datum/ai_planning_subtree/melee_spacing/ranged,
+	)
