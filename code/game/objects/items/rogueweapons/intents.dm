@@ -325,6 +325,7 @@
 /datum/intent/shoot/prewarning()
 	if(masteritem && mastermob)
 		mastermob.visible_message(span_warning("[mastermob] aims [masteritem]!"))
+		mastermob.balloon_alert_to_viewers("aims their [masteritem]")
 
 /datum/intent/arc
 	name = "arc"
@@ -347,6 +348,7 @@
 /datum/intent/arc/prewarning()
 	if(masteritem && mastermob)
 		mastermob.visible_message(span_warning("[mastermob] aims [masteritem]!"))
+		mastermob.balloon_alert_to_viewers("aims their [masteritem]")
 
 
 /datum/intent/unarmed
