@@ -43,11 +43,11 @@
 	// Guys we have already hit, no double dipping
 	var/list/hit_list = list(owner) // also don't burn ourselves
 	for(var/turf/target_turf in burn_turfs)
-		if (target_turf.is_blocked_turf(exclude_mobs = TRUE))
+		if (target_turf.is_blocked_turf(exclude_mobs = FALSE))
 			var/exp_heavy = 0
-			var/exp_light = 2
-			var/exp_flash = 3
-			var/exp_fire = 3
+			var/exp_light = 4
+			var/exp_flash = 0
+			var/exp_fire = 1
 			explosion(target_turf, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
 			return
 		burn_turf(target_turf, hit_list, owner)
@@ -72,6 +72,7 @@
 /datum/action/cooldown/mob_cooldown/fire_breath/cone
 	name = "Fire Cone"
 	desc = "Breathe several lines of fire directed at a target."
+	cooldown_time = 45 SECONDS
 	/// The angles relative to the target that shoot lines of fire
 	var/list/angles = list(-20, 0, 20)
 
@@ -86,7 +87,7 @@
 	button_icon = 'icons/effects/fire.dmi'
 	button_icon_state = "light"
 	desc = "Breathe flames in all directions."
-	cooldown_time = 10.5 SECONDS
+	cooldown_time = 60.5 SECONDS
 	//click_to_activate = FALSE
 	/// How many fire lines do we produce to turn a full circle?
 	var/sectors = 12
