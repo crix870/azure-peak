@@ -192,13 +192,10 @@
 			next_attack_msg += span_warning("Armor stops the damage.")
 
 	var/datum/wound/caused_wound
-	var/limb_bit = parse_zone(user.zone_selected)
 	if(!nodmg)
 		caused_wound = affecting.bodypart_attacked_by(BCLASS_BITE, dam2do, user, user.zone_selected, crit_message = TRUE)
-		src.balloon_alert(user, "bit your [limb_bit]")
-		user.balloon_alert(src, "[limb_bit] bit")
-	visible_message(span_danger("[user] bites [src]'s [limb_bit]![next_attack_msg.Join()]"), \
-					span_userdanger("[user] bites my [limb_bit]![next_attack_msg.Join()]"))
+	visible_message(span_danger("[user] bites [src]'s [parse_zone(user.zone_selected)]![next_attack_msg.Join()]"), \
+					span_userdanger("[user] bites my [parse_zone(user.zone_selected)]![next_attack_msg.Join()]"))
 
 	next_attack_msg.Cut()
 
