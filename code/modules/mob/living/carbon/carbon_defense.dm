@@ -136,7 +136,7 @@
 		visible_message("<span class='danger'>[user] tightens [user.p_their()] grip on [src]'s [used_limb]!</span>", \
 						"<span class='danger'>[user] tightens [user.p_their()] grip on my [used_limb]!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", null, user)
 		to_chat(user, "<span class='danger'>I tighten my grip on [src]'s [used_limb]!</span>")
-		user.balloon_alert(src, "tightens their grip on your [used_limb]")
+		user.balloon_alert(src, "grips your [used_limb]")
 
 /mob/living/carbon/proc/precise_attack_check(zone, obj/item/bodypart/affecting) //for striking eyes, throat, etc
 	if(zone && affecting)
