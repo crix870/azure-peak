@@ -1,7 +1,5 @@
 {
-
-
-    "dwarf": {
+    "full": {
  		"about": "aboot",
  		"admit": "admeet",
  		"admits": "admeets",
@@ -568,5 +566,16 @@
 		"yeah": "aye",
  		"yourself": "yersel",
  		"yourselves": "yersels"
- 		}
+ 	},
+
+	"start": {
+
+	},
+	"end": {
+	 
+	 },
+
+	"syllable": {
+	 
+	}
 }

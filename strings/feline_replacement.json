@@ -3,19 +3,19 @@
         
     },
     "start": {
-        "a": "aa",
-        "e": "ee",
-        "o": "oo",
-        "u": "uu"
+
     },
     "end": {
 
     },
     "syllable": {
-        "f": "fv",
-        "m": "mm",
-        "v": "vv",
-        "x": "xx",
-        "r": "rr"
+ 		"ne": "nye",
+		"nu": "nyu",
+		"na": "nya",
+		"no": "nyo",
+		"ove": "uv",
+		"r" : "w",
+		"l" : "w"
+		
     }
 }
